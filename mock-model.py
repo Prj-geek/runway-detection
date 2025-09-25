@@ -20,25 +20,45 @@ def mock_runway_detection(image):
 st.title("Runway Detection Using Computer Vision")
 
 uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
-import streamlit as st
-from datetime import datetime
 
 # --- Set background image using CSS ---
+import streamlit as st
+
 st.markdown(
-    f"""
+    """
     <style>
-    .stApp {{
-        background-image: url('https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg');
+    /* Main app background with overlay */
+    .stApp {
+        position: relative;
+        background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+                    no-repeat center center fixed;
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        opacity: 0.5;
-    }}
+    }
+
+    /* Add a dark overlay only on the background */
+    .stApp::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* 0.5 darkness */
+        z-index: 0;
+    }
+
+    /* Ensure app content stays above the overlay */
+    .stApp > div {
+        position: relative;
+        z-index: 1;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+st.title("My Bright Text")
+st.write("This text stays bright while the background image is dimmed.")
 
 # --- Artistic, centered title and tagline ---
 st.markdown(
