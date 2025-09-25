@@ -128,7 +128,5 @@ if uploaded_file:
     st.write("**Anchor Points (mock):**", anchor_points)
     st.write(f"**Orientation (mock):** {orientation}°")
 else:
-
-st.markdown("""
 st.info("Please upload an image to test the runway detection.")
 
