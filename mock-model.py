@@ -16,3 +16,25 @@ def mock_runway_detection(image):
     ]
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
+
+st.title("Runway Detection Demo (Mock)")
+
+uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
+
+if uploaded_file:
+    image = Image.open(uploaded_file).convert("RGB")
+    st.image(image, caption="Original Image", use_column_width=True)
+    
+    # Use mock prediction
+    mask, anchor_points, orientation = mock_runway_detection(image)
+    
+    # Overlay mask on image
+    overlay = image.copy()
+    overlay.paste((255,0,0), mask=mask)
+    st.image(overlay, caption="Detected Runway (Mock)", use_column_width=True)
+    
+    # Show anchor points
+    st.write("**Anchor Points (mock):**", anchor_points)
+    st.write(f"**Orientation (mock):** {orientation}°")
+else:
+    st.info("Please upload an image to test the runway detection.")
