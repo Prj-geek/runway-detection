@@ -61,7 +61,7 @@ st.markdown(
     <h1 style="display: block; margin-left: auto; margin-right: auto; text-align: center; white-space: nowrap; color: #FFFFFF; font-family: 'Abril Fatface'; font-size: 40px;">
         Runway Detection Using Computer Vision
     </h1>
-    <h3 style="text-align: center; color: #B3EFFF; font-family: 'Teko'; font-weight: 400;">
+    <h3 style="display: block; margin-left: auto; margin-right: auto; text-align: center; white-space: nowrap; color: #B3EFFF; font-family: 'Teko'; font-weight: 400;">
         Enhancing aviation safety with AI-powered runway detection.
     </h3>
     """,
