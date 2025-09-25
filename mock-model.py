@@ -95,6 +95,8 @@ st.markdown(
         font-weight: bold; /* optional */
         text-align: center;
         width: 100%;
+        font-size: 2em
+    
     }
 
     /* Center the entire uploader widget itself */
