@@ -84,6 +84,29 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+st.markdown(
+    """
+    <style>
+    /* Center the label text of file uploader */
+    .stFileUploader label {
+        display: flex;
+        justify-content: center;
+        font-weight: bold; /* optional */
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Center the entire uploader widget itself */
+    .stFileUploader {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 uploaded_file = st.file_uploader("Upload a runway image", type=["jpg", "png", "jpeg"])
 
 
