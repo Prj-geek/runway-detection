@@ -128,4 +128,20 @@ if uploaded_file:
     st.write("**Anchor Points (mock):**", anchor_points)
     st.write(f"**Orientation (mock):** {orientation}°")
 else:
+
+st.markdown("""
+    <style>
+    /* Target the info box container */
+    .stAlert {
+        background-color: #e0f7fa; /* custom background */
+        color: #004d40;           /* custom text color */
+        border: 2px solid #00acc1; /* custom border */
+        border-radius: 10px;       /* rounded corners */
+        padding: 15px;             /* padding inside box */
+        text-align: center;        /* center text */
+        font-size: 18px;           /* larger font */
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     st.info("Please upload an image to test the runway detection.")
