@@ -30,7 +30,7 @@ st.markdown(
     /* Main app background with overlay */
     .stApp {
         position: relative;
-        background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+        background: url("https://media.istockphoto.com/id/1190360374/photo/airplane-window-mountain-and-clouds-view.jpg?s=612x612&w=is&k=20&c=HUGLr9TKSkehox7-FXb8E4EFom6DMLwFgoclB-R_ha0=")
                     no-repeat center center fixed;
         background-size: cover;
     }
