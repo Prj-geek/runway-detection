@@ -20,17 +20,45 @@ def mock_runway_detection(image):
 st.title("Runway Detection Using Computer Vision")
 
 uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
+import streamlit as st
+from datetime import datetime
+
+# --- Set background image using CSS ---
 st.markdown(
-    """
+    f"""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-    html, body, [class*='css'] {
-        font-family: 'Roboto', sans-serif;
-    }
+    .stApp {{
+        background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }}
     </style>
     """,
     unsafe_allow_html=True
 )
+
+# --- Artistic, centered title and tagline ---
+st.markdown(
+    """
+    <h1 style="text-align: center; color: #22223b; font-family: 'Segoe UI', 'Roboto', sans-serif; font-size: 3em; letter-spacing: 2px; text-shadow: 2px 2px 8px #b5b5b5;">
+        Runway Detection Using Computer Vision
+    </h1>
+    <h3 style="text-align: center; color: #4B8BBE; font-family: 'Segoe UI', 'Roboto', sans-serif; font-weight: 400;">
+        Enhancing aviation safety with AI-powered runway detection.
+    </h3>
+    """,
+    unsafe_allow_html=True
+)
+
+# --- Show current date and time ---
+now = datetime(2025, 9, 26, 2, 0)  # Friday, September 26, 2025, 2 AM IST
+st.markdown(
+    f"<p style='text-align:center; color:#555; font-size:1.1em;'>🗓️ {now.strftime('%A, %B %d, %Y, %I:%M %p IST')}</p>",
+    unsafe_allow_html=True
+)
+
 
 
 if uploaded_file:
