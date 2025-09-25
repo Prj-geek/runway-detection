@@ -25,6 +25,23 @@ import streamlit as st
 st.markdown(
     """
     <style>
+    .main > div {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    .block-container {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+st.markdown(
+    """
+    <style>
     /* Main app background with overlay */
     .stApp {
         position: relative;
