@@ -1,8 +1,2 @@
 streamlit
-numpy
-tensorflow
 pillow
-matplotlib
-scikit-learn
-torch
-cv2
