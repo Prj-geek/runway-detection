@@ -23,7 +23,7 @@ uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg"
 
 if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Original Image", use_column_width=True)
+    st.image(image, caption="Original Image", use_container_width=True)
     
     # Use mock prediction
     mask, anchor_points, orientation = mock_runway_detection(image)
