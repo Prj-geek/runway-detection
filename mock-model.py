@@ -33,7 +33,7 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
         min-height: 100vh;
-        opacity: 0.5 !important;
+        opacity: 0.5;
     }}
     </style>
     """,
