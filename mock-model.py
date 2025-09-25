@@ -58,7 +58,7 @@ st.markdown(
 # --- Artistic, centered title and tagline ---
 st.markdown(
     """
-    <h1 style="text-align: center; color: #22223b; font-family: 'Segoe UI', 'Roboto', sans-serif; font-size: 3em; letter-spacing: 2px; text-shadow: 2px 2px 8px #b5b5b5;">
+    <h1 style="text-align: center; color: #B3EFFF; font-family: 'Asimovian'; font-size: 3em; letter-spacing: 1px;">
         Runway Detection Using Computer Vision
     </h1>
     <h3 style="text-align: center; color: #4B8BBE; font-family: 'Segoe UI', 'Roboto', sans-serif; font-weight: 400;">
@@ -67,7 +67,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("Upload a runway image", type=["jpg", "png", "jpeg"])
 
 
 if uploaded_file:
