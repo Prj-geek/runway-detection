@@ -130,6 +130,7 @@ if uploaded_file:
 else:
 
 st.markdown("""
+st.info("Please upload an image to test the runway detection.")
     <style>
     /* Target the info box container */
     .stAlert {
@@ -143,5 +144,3 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-    
-    st.info("Please upload an image to test the runway detection.")
