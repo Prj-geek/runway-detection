@@ -131,16 +131,4 @@ else:
 
 st.markdown("""
 st.info("Please upload an image to test the runway detection.")
-    <style>
-    /* Target the info box container */
-    .stAlert {
-        background-color: #e0f7fa; /* custom background */
-        color: #004d40;           /* custom text color */
-        border: 2px solid #00acc1; /* custom border */
-        border-radius: 10px;       /* rounded corners */
-        padding: 15px;             /* padding inside box */
-        text-align: center;        /* center text */
-        font-size: 18px;           /* larger font */
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
