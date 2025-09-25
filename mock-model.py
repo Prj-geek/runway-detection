@@ -17,9 +17,21 @@ def mock_runway_detection(image):
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
 
-st.title("Runway Detection Demo (Mock)")
+st.title("Runway Detection Using Computer Vision")
 
 uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+    html, body, [class*='css'] {
+        font-family: 'Roboto', sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
