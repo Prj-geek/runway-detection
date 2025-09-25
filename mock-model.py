@@ -17,9 +17,7 @@ def mock_runway_detection(image):
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
 
-st.title("Runway Detection Using Computer Vision")
 
-uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
 
 # --- Set background image using CSS ---
 import streamlit as st
@@ -57,9 +55,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("My Bright Text")
-st.write("This text stays bright while the background image is dimmed.")
-
 # --- Artistic, centered title and tagline ---
 st.markdown(
     """
@@ -72,14 +67,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# --- Show current date and time ---
-now = datetime(2025, 9, 26, 2, 0)  # Friday, September 26, 2025, 2 AM IST
-st.markdown(
-    f"<p style='text-align:center; color:#555; font-size:1.1em;'>🗓️ {now.strftime('%A, %B %d, %Y, %I:%M %p IST')}</p>",
-    unsafe_allow_html=True
-)
-
+uploaded_file = st.file_uploader("Upload an aircraft landing image", type=["jpg", "png", "jpeg"])
 
 
 if uploaded_file:
