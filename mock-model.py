@@ -75,7 +75,7 @@ st.markdown(
 # --- Artistic, centered title and tagline ---
 st.markdown(
     """
-    <h1 style="text-align: center; white-space: nowrap; color: #FFFFFF; font-family: 'Abril Fatface'; letter-spacing: 2px; font-size: 3em;">
+    <h1 style="text-align: center; white-space: nowrap; color: #FFFFFF; font-family: 'Abril Fatface'; font-size: 3em;">
         Runway Detection Using Computer Vision
     </h1>
     <h3 style="display: block; margin-left: auto; margin-right: auto; text-align: center; white-space: nowrap; color: #B3EFFF; font-family: 'Teko'; font-weight: 400;">
