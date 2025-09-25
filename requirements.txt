@@ -2,3 +2,4 @@ streamlit
 numpy
 tensorflow
 pillow
+matplotlib
