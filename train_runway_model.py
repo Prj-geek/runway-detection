@@ -628,9 +628,9 @@ if __name__ == "__main__":
 
     # Configuration - MODIFY THESE PATHS
     CONFIG = {
-        'train_images': 'C:\Users\Indransh\OneDrive\Desktop\HACKSPACE\data\train\images',        # Your 4000 training images
-        'train_labels': 'C:\Users\Indransh\OneDrive\Desktop\HACKSPACE\data\train\masks',        # Your 4000 PNG mask labels
-        'train_json': '"C:\Users\Indransh\OneDrive\Desktop\HACKSPACE\data\train\train_labels_640x360.json"', # Anchor points JSON
+        'train_images': 'E:\train\images',        # Your 4000 training images
+        'train_labels': 'E:\train\masks',        # Your 4000 PNG mask labels
+        'train_json': 'E:\train\train_labels_640x360.json', # Anchor points JSON
         'model_save_path': 'models/combined_runway_model.pth',
         'batch_size': 6,        # Adjust based on GPU memory
         'num_epochs': 75,       # Training epochs
