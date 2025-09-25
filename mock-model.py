@@ -58,10 +58,10 @@ st.markdown(
 # --- Artistic, centered title and tagline ---
 st.markdown(
     """
-    <h1 style="text-align: center; color: #FFFFFF; font-family: 'ARVO'; font-size: 3em; letter-spacing: 1px;">
+    <h1 style="text-align: center; color: #FFFFFF; font-family: 'Abril Fatface'; font-size: 3em; letter-spacing: 1px;">
         Runway Detection Using Computer Vision
     </h1>
-    <h3 style="text-align: center; color: #B3EFFF; font-family: 'Teko', sans-serif; font-weight: 400;">
+    <h3 style="text-align: center; color: #B3EFFF; font-family: 'Teko'; font-weight: 400;">
         Enhancing aviation safety with AI-powered runway detection.
     </h3>
     """,
