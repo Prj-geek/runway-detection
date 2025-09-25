@@ -28,7 +28,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+        background-image: url('https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
