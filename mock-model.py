@@ -18,42 +18,40 @@ def mock_runway_detection(image):
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
 
-
 st.title("Runway Detection from Aircraft/Drone Imagery")
 st.header("About the Project")
 
 st.markdown("""
 **Problem:**  
 - Runway incursions can lead to severe accidents and operational delays in airports.
-- Poor visibility and navigation challenges increase the risk for landing and departing aircraft.
-- Identifying runway locations in aerial footage is critical for safe, automated navigation.
+- Poor visibility and navigation challenges increase risk for landings/aerial navigation.
+- Identifying runways in aerial footage is critical for safe, automated navigation.
 
 **Solution:**  
-- This project leverages deep learning to automatically detect runways and key anchor points from aircraft or drone images.
-- The ML model uses a custom U-Net++ architecture with attention and anchor regression to robustly segment runways and identify orientation markers.
-- Such automation can improve safety during low-visibility conditions and assist ground navigation systems.
-
+- Our ML model detects runways and key anchor points from aircraft or drone images.
+- It uses image segmentation and anchor regression to robustly find runway locations and orientation markers.
+- Automation can improve safety during low-visibility and assist ground systems.
 ---
 """)
 
 st.subheader("Demo: Try Runway Detection")
+
 uploaded_file = st.file_uploader("Upload an aerial or drone image", type=["jpg", "jpeg", "png"])
-model = None
-
 if uploaded_file:
-    st.info("Running model on uploaded image...")
-    if model is None:
-        model = load_model()
-    seg_result, anchor_coords = predict_runway(uploaded_file, model)
-    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
-    st.subheader("Detected Runway Segmentation")
-    st.image(seg_result, caption="Segmentation Output (classes)", use_column_width=True)
-    st.write("Anchor Points (Runway orientation markers):")
-    st.json({"anchor_points": anchor_coords.tolist()})
+    # Open and process image
+    img = Image.open(uploaded_file).convert("RGB")
+    st.image(img, caption="Uploaded Image", use_column_width=True)
+    mask, anchor_points, orientation = mock_runway_detection(img)
+    st.subheader("Detected Runway Segmentation (Mock)")
+    st.image(mask, caption="Mock Segmentation Output", use_column_width=True)
+    st.write("Anchor Points (Mock):", anchor_points)
+    st.write("Runway Orientation (Mock):", orientation)
 else:
-    st.info("Please upload an image to test the runway detection.")
+    st.info("Please upload an image to test runway detection.")
 
-st.caption("Built by Team for Hackathon | MIT Bengaluru")
+st.caption("Built by Team for Hackathon - MIT Bengaluru")
+
+
 # --- Set background image using CSS ---
 
 st.markdown(
@@ -142,7 +140,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-uploaded_file = st.file_uploader("Upload a runway image", type=["jpg", "png", "jpeg"])
 
 
