@@ -18,6 +18,41 @@ def mock_runway_detection(image):
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
 
+def show_team_page():
+    st.title("Team")
+    st.write("Here is the team information...")
+    st.write("""
+    - Member 1: Role
+    - Member 2: Role
+    - Member 3: Role
+    """)
+
+def show_problem_page():
+    st.title("Problem Statement")
+    st.write("""
+    - Runway incursions lead to safety and operational risks.
+    - Poor visibility complicates navigation for aircraft.
+    - Identifying runways from aerial imagery is critical for safety.
+    """)
+
+def show_model_page():
+    st.title("Runway Detection Model")
+    st.write("Demo/model upload/segmentation code here...")
+
+# Sidebar for page selection
+page = st.sidebar.selectbox(
+    "Select Page",
+    ["Team", "Problem Statement", "Model Main Page"]
+)
+
+# Show content based on page selection
+if page == "Team":
+    show_team_page()
+elif page == "Problem Statement":
+    show_problem_page()
+else:
+    show_model_page()
+
 
 # --- Artistic, centered title and tagline ---
 st.markdown(
