@@ -17,7 +17,43 @@ def mock_runway_detection(image):
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
 
-st.title("Runway Detection from Aircraft/Drone Imagery")
+# --- Artistic, centered title and tagline ---
+st.markdown(
+    """
+    <h1 style="text-align: center; white-space: nowrap; color: #FFFFFF; font-family: 'Abril Fatface'; font-size: 2.5em;">
+        Runway Detection Using Computer Vision
+    </h1>
+    <h4 style="display: block; margin-left: auto; margin-right: auto; text-align: center; white-space: nowrap; color: #B3EFFF; font-family: 'Teko'; font-weight: 400;">
+        Enhancing aviation safety with AI-powered runway detection.
+    </h4>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    /* Center the label text of file uploader */
+    .stFileUploader label {
+        display: flex;
+        justify-content: center;
+        font-weight: bold; /* optional */
+        text-align: center;
+        width: 100%;
+        font-size: 2em
+    
+    }
+
+    /* Center the entire uploader widget itself */
+    .stFileUploader {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.header("About the Project")
 
 st.markdown("""
@@ -103,41 +139,5 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Artistic, centered title and tagline ---
-st.markdown(
-    """
-    <h1 style="text-align: center; white-space: nowrap; color: #FFFFFF; font-family: 'Abril Fatface'; font-size: 2.5em;">
-        Runway Detection Using Computer Vision
-    </h1>
-    <h4 style="display: block; margin-left: auto; margin-right: auto; text-align: center; white-space: nowrap; color: #B3EFFF; font-family: 'Teko'; font-weight: 400;">
-        Enhancing aviation safety with AI-powered runway detection.
-    </h4>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <style>
-    /* Center the label text of file uploader */
-    .stFileUploader label {
-        display: flex;
-        justify-content: center;
-        font-weight: bold; /* optional */
-        text-align: center;
-        width: 100%;
-        font-size: 2em
-    
-    }
-
-    /* Center the entire uploader widget itself */
-    .stFileUploader {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 
