@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 from PIL import Image, ImageDraw
-import torch
 
 # --- Mock prediction function ---
 def mock_runway_detection(image):
