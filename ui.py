@@ -72,18 +72,17 @@ if selected_tab == "Runway Detection":
             st.error(f"Error processing the image: {e}")
 elif selected_tab == "About":
     st.header("About Runway Detection Tool")
-    st.markdown("""
-        ### Features
-        - **Upload your own aerial image**
-        - **Automatic runway detection and highlighting**
-        - **Open-source and community-driven**
-        - **Easy feedback and suggestions via GitHub**
-    """)
-    st.markdown("""
-        This tool uses a mock runway detection model to highlight runways in aerial images.
-
-        For more information, visit our [GitHub repository](https://github.com/Prj-geek/runway-detection).
-    """)
+    st.markdown(
+        "### Features\n"
+        "- **Upload your own aerial image**\n"
+        "- **Automatic runway detection and highlighting**\n"
+        "- **Open-source and community-driven**\n"
+        "- **Easy feedback and suggestions via GitHub**\n"
+    )
+    st.markdown(
+        "This tool uses a mock runway detection model to highlight runways in aerial images.\n\n"
+        "For more information, visit our [GitHub repository](https://github.com/Prj-geek/runway-detection)."
+    )
     # Content handled in sidebar
 
 elif selected_tab == "Feedback":
