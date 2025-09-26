@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image, ImageDraw
+import torch
 
 # --- Mock prediction function ---
 def mock_runway_detection(image):
@@ -18,9 +19,42 @@ def mock_runway_detection(image):
     return mask, anchor_points, orientation
 
 
+st.title("Runway Detection from Aircraft/Drone Imagery")
+st.header("About the Project")
 
+st.markdown("""
+**Problem:**  
+- Runway incursions can lead to severe accidents and operational delays in airports.
+- Poor visibility and navigation challenges increase the risk for landing and departing aircraft.
+- Identifying runway locations in aerial footage is critical for safe, automated navigation.
+
+**Solution:**  
+- This project leverages deep learning to automatically detect runways and key anchor points from aircraft or drone images.
+- The ML model uses a custom U-Net++ architecture with attention and anchor regression to robustly segment runways and identify orientation markers.
+- Such automation can improve safety during low-visibility conditions and assist ground navigation systems.
+
+---
+""")
+
+st.subheader("Demo: Try Runway Detection")
+uploaded_file = st.file_uploader("Upload an aerial or drone image", type=["jpg", "jpeg", "png"])
+model = None
+
+if uploaded_file:
+    st.info("Running model on uploaded image...")
+    if model is None:
+        model = load_model()
+    seg_result, anchor_coords = predict_runway(uploaded_file, model)
+    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    st.subheader("Detected Runway Segmentation")
+    st.image(seg_result, caption="Segmentation Output (classes)", use_column_width=True)
+    st.write("Anchor Points (Runway orientation markers):")
+    st.json({"anchor_points": anchor_coords.tolist()})
+else:
+    st.info("Please upload an image to test the runway detection.")
+
+st.caption("Built by Team for Hackathon | MIT Bengaluru")
 # --- Set background image using CSS ---
-import streamlit as st
 
 st.markdown(
     """
@@ -111,22 +145,4 @@ st.markdown(
 
 uploaded_file = st.file_uploader("Upload a runway image", type=["jpg", "png", "jpeg"])
 
-
-if uploaded_file:
-    image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Original Image", use_container_width=True)
-    
-    # Use mock prediction
-    mask, anchor_points, orientation = mock_runway_detection(image)
-    
-    # Overlay mask on image
-    overlay = image.copy()
-    overlay.paste((255,0,0), mask=mask)
-    st.image(overlay, caption="Detected Runway (Mock)", use_column_width=True)
-    
-    # Show anchor points
-    st.write("**Anchor Points (mock):**", anchor_points)
-    st.write(f"**Orientation (mock):** {orientation}°")
-else:
-    st.info("Please upload an image to test the runway detection.")
 
