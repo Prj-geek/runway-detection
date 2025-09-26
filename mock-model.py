@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw
 st.markdown("""
 <style>
     div[data-testid="stColumns"] > div {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
     }
 </style>
 """, unsafe_allow_html=True)
