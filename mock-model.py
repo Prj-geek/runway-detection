@@ -3,6 +3,16 @@ st.set_page_config(layout="wide")
 import numpy as np
 from PIL import Image, ImageDraw
 
+# Add CSS to add padding around columns
+st.markdown("""
+<style>
+    div[data-testid="stColumns"] > div {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # --- Mock prediction function ---
 def mock_runway_detection(image):
     # Create a blank mask (same size as input)
