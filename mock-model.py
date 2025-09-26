@@ -18,8 +18,6 @@ def mock_runway_detection(image):
     orientation = 90  # degrees (mock value)
     return mask, anchor_points, orientation
 
-# Partition: left (project info), right (upload/demo)
-left, right = st.columns([1, 1])
 
 # --- Artistic, centered title and tagline ---
 st.markdown(
@@ -33,6 +31,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 st.markdown(
     """
@@ -58,6 +57,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Partition: left (project info), right (upload/demo)
+left, right = st.columns([1, 1])
 with left:
     st.header("About the Project")
     st.markdown("""
