@@ -22,27 +22,14 @@ def mock_runway_detection(image: Image.Image) -> Image.Image:
     draw.rectangle([left, top, right, bottom], outline="yellow", width=8)
     return img
 
-# --- Session state initialization ---
-def initialize_session_state():
-    if "uploaded_image" not in st.session_state:
-        st.session_state.uploaded_image = None
-    if "processed_image" not in st.session_state:
-        st.session_state.processed_image = None
-    if "active_tab" not in st.session_state:
-        st.session_state.active_tab = "Runway Detection"
-
-def set_active_tab(tab_name):
-    st.session_state.active_tab = tab_name
-
 # --- Sidebar layout with tabs ---
 def sidebar():
     with st.sidebar:
         st.markdown("# Navigation")
         tabs = ["Runway Detection", "About", "Feedback"]
-        selected_tab = st.radio("Go to", tabs, index=tabs.index(st.session_state.active_tab))
-        set_active_tab(selected_tab)
+        selected_tab = st.radio("Go to", tabs)
         st.markdown("---")
-        if st.session_state.active_tab == "About":
+        if selected_tab == "About":
             st.markdown(
                 "This tool allows you to upload an aerial image and detect runways automatically. "
                 "The model highlights detected runways for visualization."
@@ -52,12 +39,13 @@ def sidebar():
                 "You can contribute to the project on [GitHub](https://github.com/Prj-geek/runway-detection) "
                 "with your feedback and suggestions 💡"
             )
-        elif st.session_state.active_tab == "Feedback":
+        elif selected_tab == "Feedback":
             st.markdown(
                 "## Feedback\n"
                 "We welcome your feedback and suggestions! Please open an issue or pull request on [GitHub](https://github.com/Prj-geek/runway-detection)."
             )
         st.markdown("---")
+    return selected_tab
 
 # --- Main App ---
 st.set_page_config(page_title="Runway Detection Tool",
@@ -67,10 +55,10 @@ st.set_page_config(page_title="Runway Detection Tool",
 st.markdown("<style> ul {display: none;} </style>", unsafe_allow_html=True)  # Removes Page Navigation
 
 st.title("Runway Detection 🛬")
-initialize_session_state()
-sidebar()
 
-if st.session_state.active_tab == "Runway Detection":
+selected_tab = sidebar()
+
+if selected_tab == "Runway Detection":
     st.header("Upload your aerial image")
     uploaded_file = st.file_uploader("Choose an image file", type=["png", "jpg", "jpeg"])
 
@@ -88,10 +76,10 @@ if st.session_state.active_tab == "Runway Detection":
         except Exception as e:
             st.error(f"Error processing the image: {e}")
 
-elif st.session_state.active_tab == "About":
+elif selected_tab == "About":
     st.header("About Runway Detection Tool")
     # Content handled in sidebar
 
-elif st.session_state.active_tab == "Feedback":
+elif selected_tab == "Feedback":
     st.header("Feedback")
     # Content handled in sidebar
