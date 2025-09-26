@@ -45,7 +45,7 @@ st.markdown(
     /* Main app background with overlay */
     .stApp {
         position: relative;
-        background: url("https://images.pexels.com/photos/1436697/pexels-photo-1436697.jpeg")
+        background: url("https://images.pexels.com/photos/615060/pexels-photo-615060.jpeg")
                     no-repeat center center fixed;
         background-size: cover;
     }
