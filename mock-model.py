@@ -3,14 +3,14 @@ st.set_page_config(layout="wide")
 import numpy as np
 from PIL import Image, ImageDraw
 
-# Add CSS to add padding around columns
+# Inject CSS to add horizontal margin around container elements
 st.markdown("""
-<style>
-    div[data-testid="stColumns"] > div {
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
+    <style>
+    .custom-container {
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
-</style>
+    </style>
 """, unsafe_allow_html=True)
 
 # --- Mock prediction function ---
