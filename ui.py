@@ -34,22 +34,6 @@ def sidebar():
                 "This tool allows you to upload an aerial image and detect runways automatically. "
                 "The model highlights detected runways for visualization."
             )
-            st.markdown(
-                "This project is open-source and a work in progress. "
-                "You can contribute to the project on [GitHub](https://github.com/Prj-geek/runway-detection) "
-                "with your feedback and suggestions 💡"
-            )
-            st.markdown("""
-            This tool uses a mock runway detection model to highlight runways in aerial images.
-            <br>
-            **Features:**
-            - Upload your own aerial image
-            - See detected runway highlighted
-            - Open-source and community-driven
-            <br><br>
-            For more information, visit our [GitHub repository](https://github.com/Prj-geek/runway-detection).
-        """, unsafe_allow_html=True)
-        st.image("https://images.unsplash.com/photo-1519121785144-4c3c3f0b1c77?auto=format&fit=crop&w=800&q=80", caption="Sample Runway")
         elif selected_tab == "Feedback":
             st.markdown(
                 "## Feedback\n"
