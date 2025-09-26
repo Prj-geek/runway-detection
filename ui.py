@@ -52,7 +52,6 @@ def sidebar():
                 "You can contribute to the project on [GitHub](https://github.com/Prj-geek/runway-detection) "
                 "with your feedback and suggestions 💡"
             )
-            st.markdown("Made by [Arjun]()")
         elif st.session_state.active_tab == "Feedback":
             st.markdown(
                 "## Feedback\n"
