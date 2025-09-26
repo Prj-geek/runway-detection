@@ -73,16 +73,17 @@ if selected_tab == "Runway Detection":
 elif selected_tab == "About":
     st.header("About Runway Detection Tool")
     st.markdown("""
+        ### Features
+        - **Upload your own aerial image**
+        - **Automatic runway detection and highlighting**
+        - **Open-source and community-driven**
+        - **Easy feedback and suggestions via GitHub**
+    """)
+    st.markdown("""
         This tool uses a mock runway detection model to highlight runways in aerial images.
-        <br>
-        **Features:**
-        - Upload your own aerial image
-        - See detected runway highlighted
-        - Open-source and community-driven
-        <br><br>
+
         For more information, visit our [GitHub repository](https://github.com/Prj-geek/runway-detection).
-    """, unsafe_allow_html=True)
-    st.image("https://images.unsplash.com/photo-1519121785144-4c3c3f0b1c77?auto=format&fit=crop&w=800&q=80", caption="Sample Runway")
+    """)
     # Content handled in sidebar
 
 elif selected_tab == "Feedback":
